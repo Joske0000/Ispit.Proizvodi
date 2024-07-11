@@ -14,7 +14,6 @@ namespace Ispit.Proizvodi
         public void ZvoniZvono()
         {
             Console.Write("Brrrrrrrr.......Zvono je zazvonilo. Ispit počinje: ");
-            Console.WriteLine(DateTime.Now);
             Console.WriteLine("");
             Ispit?.Invoke(DateTime.Now);
         }
