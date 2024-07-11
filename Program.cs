@@ -22,6 +22,7 @@ namespace Ispit.Proizvodi
                 new Polaznik { ImePrezime = "Jelena Jelić" }
              };
 
+       
             predavac.ZvoniZvono();
             Console.WriteLine("");
 
@@ -34,11 +35,8 @@ namespace Ispit.Proizvodi
             Polaznik polaznikZaPredaju = DohvatiRandomPolaznika(polaznici);
 
             polaznikZaPredaju.PredajOdgovoreNaPitanja();
+
             predavac.IspitZaprimljen(polaznikZaPredaju);
-
-            polaznikZaPredaju.IspitZavrsen += predavac.IspitZaprimljen;
-
-            predavac.Ispit += polaznikZaPredaju.OdgovoriNaPitanja;
 
             Console.ReadKey();
         }
