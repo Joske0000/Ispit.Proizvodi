@@ -18,6 +18,7 @@ namespace Ispit.Proizvodi
             Console.ResetColor();
             Console.WriteLine("");
             Console.Beep();
+            Thread.Sleep(1000);
             Ispit?.Invoke(DateTime.Now);
         }
     
