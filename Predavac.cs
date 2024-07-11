@@ -13,7 +13,7 @@ namespace Ispit.Proizvodi
 
         public void ZvoniZvono()
         {
-            Console.Write("Zvono je zazvonilo. Ispit počinje: ");
+            Console.Write("Brrrrrrrr.......Zvono je zazvonilo. Ispit počinje: ");
             Console.WriteLine(DateTime.Now);
             Console.WriteLine("");
             Ispit?.Invoke(DateTime.Now);
@@ -21,8 +21,9 @@ namespace Ispit.Proizvodi
     
         public void IspitZaprimljen(Polaznik polaznik)
         {
-            Console.WriteLine($"Predavač je zaprimio ispit od polaznika: {polaznik.ImePrezime}");
             Console.WriteLine("------------------------------------------------------------------");
+            Console.WriteLine($"Predavač je zaprimio ispit od polaznika: {polaznik.ImePrezime}", Console.ForegroundColor = ConsoleColor.Yellow);
+            Console.ResetColor();
         }
     }
 }

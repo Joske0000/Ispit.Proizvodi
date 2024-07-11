@@ -15,13 +15,15 @@ public class Polaznik
         public void OdgovoriNaPitanja(DateTime vrijeme_pocetka)
         {
             Console.WriteLine($"Polaznik: {ImePrezime} je započeo ispit {vrijeme_pocetka}");
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
         }
         public void PredajOdgovoreNaPitanja()
         {
-            Thread.Sleep(3000);
-            Console.Write($"{ImePrezime} je predao ispit u: ");
+            Thread.Sleep(1000);
+            Console.WriteLine("------------------------------------------------------------------");
+            Console.Write($"{ImePrezime} je predao/la ispit u: ", Console.ForegroundColor = ConsoleColor.Green);
             Console.WriteLine(DateTime.Now);
+            Console.ResetColor();
             Console.WriteLine("------------------------------------------------------------------");
             IspitZavrsen?.Invoke(this);
         }

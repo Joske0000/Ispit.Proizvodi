@@ -14,11 +14,13 @@ namespace Ispit.Proizvodi
 
             Predavac predavac = new Predavac();
 
-            List<Polaznik> polaznici = new List<Polaznik>();
-            polaznici.Add(new Polaznik { ImePrezime = "Marko Marković" });
-            polaznici.Add(new Polaznik { ImePrezime = "Ana Anić" });
-            polaznici.Add(new Polaznik { ImePrezime = "Petar Petrović" });
-            polaznici.Add(new Polaznik { ImePrezime = "Jelena Jelić" });
+            List<Polaznik> polaznici = new List<Polaznik>
+             {
+                new Polaznik { ImePrezime = "Marko Marković" },
+                new Polaznik { ImePrezime = "Ana Anić" },
+                new Polaznik { ImePrezime = "Petar Petrović" },
+                new Polaznik { ImePrezime = "Jelena Jelić" }
+             };
 
             predavac.ZvoniZvono();
             Console.WriteLine("");
@@ -28,20 +30,26 @@ namespace Ispit.Proizvodi
                 polaznik.OdgovoriNaPitanja(DateTime.Now);
                 Console.WriteLine("------------------------------------------------------------------");
             }
+           
+            Polaznik polaznikZaPredaju = DohvatiRandomPolaznika(polaznici);
 
-            Random random = new Random();
-            int index = random.Next(polaznici.Count);
-            Polaznik polaznikZaPredaju = polaznici[index];
-            
+            polaznikZaPredaju.PredajOdgovoreNaPitanja();
+            predavac.IspitZaprimljen(polaznikZaPredaju);
+
             polaznikZaPredaju.IspitZavrsen += predavac.IspitZaprimljen;
 
             predavac.Ispit += polaznikZaPredaju.OdgovoriNaPitanja;
-            
-            polaznikZaPredaju.PredajOdgovoreNaPitanja(); 
-
 
             Console.ReadKey();
         }
-        
-    }
-}
+        public static Polaznik DohvatiRandomPolaznika(List<Polaznik> polaznici)
+        {
+            Random random = new Random();
+            int randomIndex = random.Next(polaznici.Count);
+            return polaznici[randomIndex];
+        }
+
+           
+     }
+
+ }
