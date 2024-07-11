@@ -22,10 +22,10 @@ public class Polaznik
 
         public void PredajOdgovoreNaPitanja()
         {
-            Thread.Sleep(5000);
-            Console.Write($"{ImePrezime} je predao odgovore u: ");
+            Thread.Sleep(3000);
+            Console.Write($"{ImePrezime} je predao ispit u: ");
             Console.WriteLine(DateTime.Now);
-            Console.WriteLine("-----------------------------------------");
+            Console.WriteLine("------------------------------------------------------------------");
             IspitZavrsen?.Invoke(this);
         }
     }

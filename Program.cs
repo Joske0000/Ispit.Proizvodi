@@ -26,7 +26,7 @@ namespace Ispit.Proizvodi
             foreach (var polaznik in polaznici)
             {
                 polaznik.OdgovoriNaPitanja(DateTime.Now);
-                Console.WriteLine("-----------------------------------------");
+                Console.WriteLine("------------------------------------------------------------------");
             }
             
 

@@ -15,6 +15,7 @@ namespace Ispit.Proizvodi
         {
             Console.Write("Zvono je zazvonilo. Ispit počinje: ");
             Console.WriteLine(DateTime.Now);
+            Console.WriteLine("");
             Ispit?.Invoke(DateTime.Now);
         }
 
@@ -22,7 +23,7 @@ namespace Ispit.Proizvodi
         public void IspitZaprimljen(Polaznik polaznik)
         {
             Console.WriteLine($"Predavač je zaprimio ispit od polaznika: {polaznik.ImePrezime}");
-            Console.WriteLine("-----------------------------------------");
+            Console.WriteLine("------------------------------------------------------------------");
         }
     }
 }
