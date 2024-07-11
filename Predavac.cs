@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Ispit.Proizvodi
@@ -16,6 +17,7 @@ namespace Ispit.Proizvodi
             Console.WriteLine("Brrrrrrrr.......Zvono je zazvonilo. Ispit počinje: ", Console.ForegroundColor=ConsoleColor.DarkRed);
             Console.ResetColor();
             Console.WriteLine("");
+            Console.Beep();
             Ispit?.Invoke(DateTime.Now);
         }
     
