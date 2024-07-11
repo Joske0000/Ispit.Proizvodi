@@ -45,8 +45,8 @@ namespace Ispit.Proizvodi
         public static Polaznik DohvatiRandomPolaznika(List<Polaznik> polaznici)
         {
             Random random = new Random();
-            int randomIndex = random.Next(polaznici.Count);
-            return polaznici[randomIndex];
+            int nasumicni = random.Next(polaznici.Count);
+            return polaznici[nasumicni];
         }
 
            
