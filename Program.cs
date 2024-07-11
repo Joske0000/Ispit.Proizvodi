@@ -28,11 +28,17 @@ namespace Ispit.Proizvodi
                 polaznik.IspitZavrsen += predavac.IspitZaprimljen;
             }
 
-            predavac.ZvoniZvono(); 
+            predavac.ZvoniZvono();
 
             Random random = new Random();
             int odabraniPolaznik = random.Next(polaznici.Count);
             polaznici[odabraniPolaznik].PredajOdgovoreNaPitanja();
+
+            foreach (var polaznik in polaznici)
+            {
+                predavac.Ispit -= polaznik.OdgovoriNaPitanja;
+                polaznik.IspitZavrsen -= predavac.IspitZaprimljen;
+            }
 
             Console.ReadKey();
         }
