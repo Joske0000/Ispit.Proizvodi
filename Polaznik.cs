@@ -5,7 +5,7 @@ namespace Ispit.Proizvodi
 {
 public class Polaznik
     {
-       
+    
         public string ImePrezime { get; set; }
 
         public delegate void PredajIspit(Polaznik polaznik);
@@ -26,4 +26,6 @@ public class Polaznik
             IspitZavrsen?.Invoke(this);
         }
     }
+
+
 }

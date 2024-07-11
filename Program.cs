@@ -11,7 +11,7 @@ namespace Ispit.Proizvodi
     {
         static void Main(string[] args)
         {
-            
+
             Predavac predavac = new Predavac();
 
             List<Polaznik> polaznici = new List<Polaznik>();
@@ -19,7 +19,7 @@ namespace Ispit.Proizvodi
             polaznici.Add(new Polaznik { ImePrezime = "Ana Anić" });
             polaznici.Add(new Polaznik { ImePrezime = "Petar Petrović" });
             polaznici.Add(new Polaznik { ImePrezime = "Jelena Jelić" });
-            
+
             predavac.ZvoniZvono();
             Console.WriteLine("");
 
