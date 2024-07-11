@@ -13,7 +13,8 @@ namespace Ispit.Proizvodi
 
         public void ZvoniZvono()
         {
-            Console.Write("Brrrrrrrr.......Zvono je zazvonilo. Ispit počinje: ");
+            Console.WriteLine("Brrrrrrrr.......Zvono je zazvonilo. Ispit počinje: ", Console.ForegroundColor=ConsoleColor.DarkRed);
+            Console.ResetColor();
             Console.WriteLine("");
             Ispit?.Invoke(DateTime.Now);
         }

@@ -22,32 +22,19 @@ namespace Ispit.Proizvodi
                 new Polaznik { ImePrezime = "Jelena Jelić" }
              };
 
-       
-            predavac.ZvoniZvono();
-            Console.WriteLine("");
-
             foreach (var polaznik in polaznici)
             {
-                polaznik.OdgovoriNaPitanja(DateTime.Now);
-                Console.WriteLine("------------------------------------------------------------------");
+                predavac.Ispit += polaznik.OdgovoriNaPitanja;
+                polaznik.IspitZavrsen += predavac.IspitZaprimljen;
             }
-           
-            Polaznik polaznikZaPredaju = DohvatiRandomPolaznika(polaznici);
 
-            polaznikZaPredaju.PredajOdgovoreNaPitanja();
+            predavac.ZvoniZvono(); 
 
-            predavac.IspitZaprimljen(polaznikZaPredaju);
+            Random random = new Random();
+            int odabraniPolaznik = random.Next(polaznici.Count);
+            polaznici[odabraniPolaznik].PredajOdgovoreNaPitanja();
 
             Console.ReadKey();
         }
-        public static Polaznik DohvatiRandomPolaznika(List<Polaznik> polaznici)
-        {
-            Random random = new Random();
-            int nasumicni = random.Next(polaznici.Count);
-            return polaznici[nasumicni];
-        }
-
-           
-     }
-
- }
+    }
+}

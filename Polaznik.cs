@@ -15,6 +15,7 @@ public class Polaznik
         public void OdgovoriNaPitanja(DateTime vrijeme_pocetka)
         {
             Console.WriteLine($"Polaznik: {ImePrezime} je započeo ispit {vrijeme_pocetka}");
+            Console.WriteLine("------------------------------------------------------------------");
             Thread.Sleep(1000);
         }
         public void PredajOdgovoreNaPitanja()
@@ -24,7 +25,6 @@ public class Polaznik
             Console.Write($"{ImePrezime} je predao/la ispit u: ", Console.ForegroundColor = ConsoleColor.Green);
             Console.WriteLine(DateTime.Now);
             Console.ResetColor();
-            Console.WriteLine("------------------------------------------------------------------");
             IspitZavrsen?.Invoke(this);
         }
     }
