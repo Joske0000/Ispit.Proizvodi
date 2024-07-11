@@ -18,8 +18,7 @@ namespace Ispit.Proizvodi
             Console.WriteLine("");
             Ispit?.Invoke(DateTime.Now);
         }
-
-        // c. Kreiranje metode IspitZaprimljen
+    
         public void IspitZaprimljen(Polaznik polaznik)
         {
             Console.WriteLine($"Predavač je zaprimio ispit od polaznika: {polaznik.ImePrezime}");

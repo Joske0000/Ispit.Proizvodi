@@ -28,18 +28,15 @@ namespace Ispit.Proizvodi
                 polaznik.OdgovoriNaPitanja(DateTime.Now);
                 Console.WriteLine("------------------------------------------------------------------");
             }
-            
 
             Random random = new Random();
             int index = random.Next(polaznici.Count);
             Polaznik polaznikZaPredaju = polaznici[index];
-
             
             polaznikZaPredaju.IspitZavrsen += predavac.IspitZaprimljen;
 
             predavac.Ispit += polaznikZaPredaju.OdgovoriNaPitanja;
             
-           
             polaznikZaPredaju.PredajOdgovoreNaPitanja(); 
 
 
